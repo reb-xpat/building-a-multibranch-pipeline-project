@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
        CI = 'true'
+       buildNumber=${currentBuild.number}
     }
 
     stages {
@@ -18,6 +19,7 @@ pipeline {
         stage('Test') {
           steps {
             sh './jenkins/scripts/test.sh'
+            sh 'echo $buildNumber'
           }
         }
                 stage('Deliver for development') {
