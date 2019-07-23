@@ -7,7 +7,7 @@ pipeline {
     }
     environment {
        CI = 'true'
-       buildNumber='${currentBuild.number}'
+       buildNumber=${currentBuild.number}
     }
 
     stages {
