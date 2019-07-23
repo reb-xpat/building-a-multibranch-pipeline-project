@@ -7,12 +7,12 @@ pipeline {
     }
     environment {
        CI = 'true'
-       buildNumber=$env.buildNumber
     }
 
     stages {
         stage('Build') {
             steps {
+                buildNumber=$env.buildNumber
                 sh 'npm install'
             }
         }
